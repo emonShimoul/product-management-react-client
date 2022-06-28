@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const AddProduct = () => {
     const nameRef = useRef();
     const priceRef = useRef();
     const quantityRef = useRef();
+    const [productInfo, setproductInfo] = useState({});
     const handleSubmit = e => {
         const name = nameRef.current.value;
         const price = priceRef.current.value;
@@ -16,7 +17,16 @@ const AddProduct = () => {
             },
             body: JSON.stringify(productsDetails)
         })
-        .then()
+        .then(res => res.json())
+        .then(data => {
+            setproductInfo(data);
+            if(productInfo.acknowledged !== "false"){
+                alert("Product Inserted Successfully!!");
+            }
+            else{
+                alert("Product not inserted...");
+            }
+        });
 
 
         nameRef.current.value = "";
