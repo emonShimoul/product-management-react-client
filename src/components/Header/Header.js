@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <div>
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/products">Products</Link>
-                <Link to="/addproducts">Add Products</Link>
+                <Link to="/">Home </Link>| 
+                <Link to="/products"> Products </Link>|
+                <Link to="/addproducts"> Add Products</Link>
             </nav>
         </div>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const Products = () => {
     const[products, setProducts] = useState([]);
@@ -35,7 +36,7 @@ const Products = () => {
                     products.map(product => <li key={product._id}>
                         {product.name} - {product.price} - {product.quantity} {" "} 
                         <button onClick={() => handleDelete(product._id)}>X</button> {" "} 
-                        <button>Update</button>
+                        <Link to={`/updateuser/${product._id}`}><button>Update</button></Link>
                         </li> )
                 }
             </ul>
