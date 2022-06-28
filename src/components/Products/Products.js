@@ -18,7 +18,7 @@ const Products = () => {
             })
             .then(res => res.json())
             .then(data => {
-                if(data.deletedCount>0){
+                if(data.deletedCount > 0){
                     // console.log(data);
                     alert("Deleted Successfully!!");
                     const remainingProducts = products.filter(product => product._id !== id);
